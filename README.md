@@ -1,7 +1,3 @@
-Certainly! Here's a README file for the simple calculator app:
-
----
-
 # Simple Calculator App
 
 A basic calculator application built using Python and wxPython, inspired by the Windows calculator.
@@ -23,20 +19,13 @@ A basic calculator application built using Python and wxPython, inspired by the 
 
 ### Steps
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/simple-calculator.git
-cd simple-calculator
-```
-
-2. Install the required packages:
+1. Install the required packages:
 
 ```bash
 pip install wxPython
 ```
 
-3. Run the calculator:
+2. Run the calculator:
 
 ```bash
 python main.py
