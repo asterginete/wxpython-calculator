@@ -47,7 +47,3 @@ class Calculator(wx.Frame):
             new_value = current_value + label
             self.text_display.SetValue(new_value)
 
-if __name__ == '__main__':
-    app = wx.App()
-    Calculator(None, title='Calculator')
-    app.MainLoop()
