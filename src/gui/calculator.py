@@ -1,9 +1,13 @@
 import wx
 from src.history import HistoryPanel
+from src.logic.core import BasicCalculator
+from src.utils.helpers import safe_eval
 
-class Calculator(wx.Frame):
+class CalculatorApp(wx.Frame):
     def __init__(self, parent, title):
-        super(Calculator, self).__init__(parent, title=title, size=(300, 500))  # Adjusted size for history panel
+        super(CalculatorApp, self).__init__(parent, title=title, size=(350, 600))
+
+        self.basic_calculator = BasicCalculator()
 
         self.InitUI()
         self.Centre()
@@ -43,13 +47,11 @@ class Calculator(wx.Frame):
         label = event.GetEventObject().GetLabel()
 
         if label == '=':
-            try:
-                computation = eval(self.text_display.GetValue())
-                self.text_display.SetValue(str(computation))
-                # Update the history
-                self.history_panel.add_entry(f"{self.text_display.GetValue()} = {computation}")
-            except Exception as e:
-                self.text_display.SetValue("Error")
+            expression = self.text_display.GetValue()
+            result = safe_eval(expression)
+            self.text_display.SetValue(str(result))
+            # Update the history
+            self.history_panel.add_entry(f"{expression} = {result}")
         elif label == 'C':
             self.text_display.SetValue('')
         else:

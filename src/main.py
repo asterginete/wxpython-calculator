@@ -1,9 +1,9 @@
 import wx
-from src.calculator import Calculator
+from src.gui.calculator import CalculatorApp
 
 def main():
     app = wx.App(False)
-    Calculator(None, title='Simple Calculator')
+    CalculatorApp(None, title='Advanced Calculator')
     app.MainLoop()
 
 if __name__ == "__main__":
